@@ -18,10 +18,11 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 const mongoURI = process.env.MONGO_URI;
 const port = process.env.PORT || 4000;
 
-// app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
-
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://blog-app-frontend-ruddy.vercel.app"
+  );
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
